@@ -15,18 +15,19 @@ class Clock {
   printTime() {
     // Format the time in HH:MM:SS
     // Use console.log to print it.
-    // if (this.seconds < 10){
-    //     this.seconds = `0${this.seconds}`
-    // }
-    // debugger
-    // if (this.minutes < 10 && this.minutes.length < 2){
-    //     this.minutes = `0${this.minutes}`
-    // }
-    // if (this.hours < 10){
-    //     this.hours = `0${this.hours}`
-    // }
-    const zeroPad = (num, places) => String(num).padStart(places, '0')
-    console.log(`${zeroPad(this.hours,2)}:${zeroPad(this.minutes)}:${zeroPad(this.seconds)}`);
+    this.seconds = this.seconds.toString()
+    if (this.seconds.length < 2) {
+      this.seconds = `0${this.seconds}`
+    }
+    this.minutes = this.minutes.toString()
+    if (this.minutes.length < 2) {
+      this.minutes = `0${this.minutes}`
+    }
+    this.hours = this.hours.toString()
+    if (this.hours.length < 2) {
+      this.hours = `0${this.hours}`
+    }
+    console.log(`${(this.hours)}:${(this.minutes)}:${(this.seconds)}`);
   }
   _tick() {
     // 1. Increment the time by one second.
